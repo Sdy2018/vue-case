@@ -17,7 +17,7 @@ module.exports = {
   }),
   new webpack.NamedModulesPlugin(),
   new webpack.HotModuleReplacementPlugin(),
-  new VueLoaderPlugin()
+  new VueLoaderPlugin(),
   ],
   output: {
     filename: 'bundle.js',

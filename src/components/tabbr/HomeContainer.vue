@@ -1,11 +1,8 @@
 <template>
   <div>
-    <div style="height: 400px;width:100%">
-      <mt-swipe  :auto="3000"  >
-        <mt-swipe-item  v-for="item in imgs" :key="item" :style="{ 'backgroundImage':'url('+item+')'}">
-        </mt-swipe-item>
-      </mt-swipe>
-    </div>
+    <slide :pictures="imgs">
+      
+    </slide>
     <div>
       <ul class="mui-table-view mui-grid-view mui-grid-9">
         <router-link to="/home/news">
@@ -14,14 +11,14 @@
             <div class="mui-media-body">新闻资讯</div></a>
           </li>
         </router-link>
-        <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+        <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><router-link to="/home/photoList">
           <img src="../../img/menu2.png" alt="">
-          <div class="mui-media-body">图片分享</div></a>
+          <div class="mui-media-body">图片分享</div></router-link>
         </li>
-        <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+        <router-link to="/home/goods" tag="li" class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
           <img src="../../img/menu3.png" alt="">
           <div class="mui-media-body">商品购买</div></a>
-        </li>
+        </router-link>
         <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
           <img src="../../img/menu4.png" alt="">
           <div class="mui-media-body">留言反馈</div></a>
@@ -40,10 +37,12 @@
   </div>
 </template>
 
-<script src="">
+<script >
 import rainbow from'../../img/rainbow.jpg';
 import train from'../../img/train.jpg';
 import moon from'../../img/moon.jpg';
+
+import slide from '../subComponents/SlideContainer.vue'
 export default{
   methods:{
     getslide(){
@@ -54,24 +53,18 @@ export default{
     return{
       imgs:[rainbow,train,moon]
     }
+  },
+  components:{
+    slide
   }
 }
 </script>
 
 <style scoped>
 .mint-swipe-item{
-  background-size: cover !important;
-  background-repeat: no-repeat !important;
-  background-position: center !important;
-}
-.img1{
-  background: url("../../img/rainbow.jpg");
-}
-.img2{
-  background: url("../../img/train.jpg");
-}
-.img3{
-  background: url("../../img/moon.jpg");
+  background-size: cover ;
+  background-repeat: no-repeat ;
+  background-position: center ;
 }
 .mui-grid-view.mui-grid-9{
   background-color: white

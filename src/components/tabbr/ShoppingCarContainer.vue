@@ -8,6 +8,8 @@
 
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+h1{
+  margin-top:20px;
+}
 </style>
