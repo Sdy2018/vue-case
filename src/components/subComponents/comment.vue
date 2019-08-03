@@ -74,8 +74,8 @@
   margin-top: 10px;
   background-color: #eee;
 }
-.cmt-list>.comt-item>.comt-content{
-  border: 1px solid #f40;
+.cmt-list>.comt-item>.comt-content
+{ border: 1px solid #f40;
   text-indent: 2em;
   height: 60px;
   padding-top: 5px;
